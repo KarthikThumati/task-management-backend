@@ -116,7 +116,7 @@ router.put('/api/editTask/:id', auth, async (req, res) => {
 
 router.get('/api/tasks', async (req, res) => {
 	try{
-        const data = await Task.find();
+        const data = await Task.find().sort({task: 1});
         res.json(data)
     }
     catch(error){
